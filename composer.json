@@ -1,9 +1,13 @@
 {
-    "name": "hexlet/code",
-    "autoload": {
-        "psr-4": {
-            "Hexlet\\Code\\": "src/"
-        }
-    },
-    "require": {}
+  "name": "hexlet/code",
+  "description": "first project of hexlet's php prof",
+  "autoload": {
+    "psr-4": {
+      "Hexlet\\Code\\": "src/"
+    }
+  },
+  "bin": [
+    "bin/brain-games"
+  ],
+  "require": {}
 }
