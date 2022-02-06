@@ -15,3 +15,14 @@ function gcd($a, $b)
 
     return gcd($b, $a % $b);
 }
+
+function isPrime($num)
+{
+    for ($i = 2, $s = sqrt($num); $i <= $s; $i++) {
+        if ($num % $i === 0) {
+            return false;
+        }
+    }
+
+    return $num > 1;
+}

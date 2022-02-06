@@ -4,6 +4,7 @@ namespace Brain\Games\Games;
 
 use function Brain\Games\utils\gcd;
 use function Brain\Games\utils\isEven;
+use function Brain\Games\utils\isPrime;
 
 function getBrainEvenQuestionData()
 {
@@ -63,4 +64,10 @@ function getBrainProgressionQuestionData()
     $progression[$hiddenIndex] = "..";
 
     return [implode(" ", $progression), (string) $answer];
+}
+
+function getBrainPrimeQuestionData()
+{
+    $question = rand(0, 100);
+    return [$question, isPrime($question) ? 'yes' : 'no'];
 }
