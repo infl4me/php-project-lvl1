@@ -1,6 +1,6 @@
 <?php
 
-namespace Brain\Games\getQuestion;
+namespace Brain\Games\Games;
 
 use function Brain\Games\utils\isEven;
 

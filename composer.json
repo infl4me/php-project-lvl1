@@ -8,7 +8,8 @@
     "files": [
       "bin/Cli.php",
       "src/utils.php",
-      "src/getQuestion.php"
+      "src/Games.php",
+      "src/Engine.php"
     ]
   },
   "bin": [

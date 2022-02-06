@@ -10,20 +10,7 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-use function cli\line;
-use function cli\prompt;
-use function Brain\Games\getQuestion\getBrainCalcQuestionData;
+use function Brain\Games\Games\getBrainCalcQuestionData;
+use function Brain\Games\Engine\run;
 
-$name = Brain\Games\Cli\runGreeting();
-
-line("What is the result of the expression?");
-[$question, $answer] = getBrainCalcQuestionData();
-line("Question: %s", $question);
-
-$userAnswer = prompt('Your answer');
-if ($userAnswer === $answer) {
-    line("Correct!");
-} else {
-    line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$answer}'.");
-    line("Let's try again, {$name}!");
-}
+run("What is the result of the expression?", fn () => getBrainCalcQuestionData());
