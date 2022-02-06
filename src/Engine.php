@@ -6,7 +6,7 @@ use function Brain\Games\Cli\runGreeting;
 use function cli\line;
 use function cli\prompt;
 
-function run($questionDscr, $getData)
+function run(string $questionDscr, callable $getData)
 {
     $roundsCount = 3;
     $name = runGreeting();
@@ -24,11 +24,11 @@ function run($questionDscr, $getData)
             line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$answer}'.");
             line("Let's try again, {$name}!");
 
-            return $i + 1;
+            return -1;
         }
     }
 
     line("Congratulations, {$name}!");
 
-    return $i + 1;
+    return 0;
 }
