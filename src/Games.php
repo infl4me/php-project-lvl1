@@ -61,7 +61,6 @@ function getBrainProgressionQuestionData()
 
     $answer = $progression[$hiddenIndex];
     $progression[$hiddenIndex] = "..";
-    
 
     return [implode(" ", $progression), (string) $answer];
 }
