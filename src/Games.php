@@ -47,3 +47,21 @@ function getBrainGcdQuestionData()
 
     return [$question, (string) gcd($op1, $op2)];
 }
+
+function getBrainProgressionQuestionData()
+{
+    $n = 10;
+    $step = rand(2, 5);
+    $progression = [];
+    $hiddenIndex = rand(0, $n - 1);
+
+    for ($i = 1; $i < $n * $step; $i += $step) {
+        $progression[] = $i;
+    }
+
+    $answer = $progression[$hiddenIndex];
+    $progression[$hiddenIndex] = "..";
+    
+
+    return [implode(" ", $progression), (string) $answer];
+}
