@@ -3,6 +3,7 @@
 namespace Brain\Games\Games;
 
 use function Brain\Games\utils\isEven;
+use function Brain\Games\utils\gcd;
 
 function getBrainEvenQuestionData()
 {
@@ -36,4 +37,13 @@ function getBrainCalcQuestionData()
     $question = "{$op1} {$operations[$operation]} {$op2}";
 
     return [$question, (string) $answer];
+}
+
+function getBrainGcdQuestionData()
+{
+    $op1 = rand(0, 100);
+    $op2 = rand(0, 100);
+    $question = "{$op1} {$op2}";
+    
+    return [$question, (string) gcd($op1, $op2)];
 }
