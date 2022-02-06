@@ -1,0 +1,29 @@
+#!/usr/bin/env php
+
+<?php
+
+$autoloadPath1 = __DIR__ . '/../../../autoload.php';
+$autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
+if (file_exists($autoloadPath1)) {
+    require_once $autoloadPath1;
+} else {
+    require_once $autoloadPath2;
+}
+
+use function cli\line;
+use function cli\prompt;
+use function Brain\Games\getQuestion\getBrainCalcQuestionData;
+
+$name = Brain\Games\Cli\runGreeting();
+
+line("What is the result of the expression?");
+[$question, $answer] = getBrainCalcQuestionData();
+line("Question: %s", $question);
+
+$userAnswer = prompt('Your answer');
+if ($userAnswer === $answer) {
+    line("Correct!");
+} else {
+    line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$answer}'.");
+    line("Let's try again, {$name}!");
+}
